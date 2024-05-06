@@ -17,7 +17,8 @@ SOURCES = ft_printf.c \
 		  pf_print_str.c \
 		  pf_putchar.c \
 		  pf_print_format.c \
-		  pf_print_nbr_base.c
+		  pf_print_nbr_base.c \
+		  pf_print_ptr.c
 
 OBJECTS = ${SOURCES:.c=.o}
 
