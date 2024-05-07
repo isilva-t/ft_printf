@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_print_ptr.c                                     :+:      :+:    :+:   */
+/*   pf_put_nbr_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isilva-t <isilva-t@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 13:21:46 by isilva-t          #+#    #+#             */
-/*   Updated: 2024/05/07 13:46:10 by isilva-t         ###   ########.fr       */
+/*   Created: 2024/05/07 13:45:05 by isilva-t          #+#    #+#             */
+/*   Updated: 2024/05/07 13:45:09 by isilva-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	put_ptr(unsigned long long n, int cont)
+int	pf_put_nbr_base(long n, int base, int hex_cap)
 {
-	char	*n_cache;
+	int		cont;
+	char	*cache;
 
 	cont = 0;
-	n_cache = "0123456789abcdef";
-	if (n >= 16)
+	cache = "0123456789abcdef";
+	if (n < 0)
 	{
-		cont += (put_ptr(n / 16, cont));
-		return (cont + put_ptr(n % 16, cont));
+		pf_putchar('-');
+		return (1 + pf_put_nbr_base(-n, base, hex_cap));
+	}
+	else if (n < base)
+	{
+		if (n > 9 && hex_cap == -32)
+			return (pf_putchar(cache[n] + hex_cap));
+		else
+			return (pf_putchar(cache[n]));
 	}
 	else
-		return (cont + pf_putchar(n_cache[n]));
-}
-
-int	pf_print_ptr(unsigned long long ptr, int cont)
-{
-	if (ptr == 0)
-		return (write(1, "(nil)", 5));
-	else
 	{
-		cont += write(1, "0x", 2);
-		cont += put_ptr(ptr, cont);
+		cont += pf_put_nbr_base(n / base, base, hex_cap);
+		return (cont + pf_put_nbr_base(n % base, base, hex_cap));
 	}
-	return (cont);
 }

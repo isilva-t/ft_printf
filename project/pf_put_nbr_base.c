@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_print_nbr_base.c                                :+:      :+:    :+:   */
+/*   pf_put_nbr_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: isilva-t <isilva-t@students.42porto.com>   +#+  +:+       +#+        */
+/*   By: isilva-t <isilva-t@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/03 09:12:43 by isilva-t          #+#    #+#             */
-/*   Updated: 2024/05/07 11:13:49 by isilva-t         ###   ########.fr       */
+/*   Created: 2024/05/07 13:45:05 by isilva-t          #+#    #+#             */
+/*   Updated: 2024/05/07 13:45:09 by isilva-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	pf_print_nbr_base(long n, int base, int hex_cap)
+int	pf_put_nbr_base(long n, int base, int hex_cap)
 {
 	int		cont;
 	char	*cache;
 
 	cont = 0;
 	cache = "0123456789abcdef";
-
 	if (n < 0)
 	{
 		pf_putchar('-');
-		return (1 + pf_print_nbr_base(-n, base, hex_cap));
+		return (1 + pf_put_nbr_base(-n, base, hex_cap));
 	}
 	else if (n < base)
 	{
@@ -34,7 +33,7 @@ int	pf_print_nbr_base(long n, int base, int hex_cap)
 	}
 	else
 	{
-		cont += pf_print_nbr_base(n / base, base, hex_cap);
-		return (cont + pf_print_nbr_base(n % base, base, hex_cap));
+		cont += pf_put_nbr_base(n / base, base, hex_cap);
+		return (cont + pf_put_nbr_base(n % base, base, hex_cap));
 	}
 }

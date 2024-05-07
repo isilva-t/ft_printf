@@ -6,7 +6,7 @@
 /*   By: isilva-t <isilva-t@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:07:54 by isilva-t          #+#    #+#             */
-/*   Updated: 2024/05/07 11:18:07 by isilva-t         ###   ########.fr       */
+/*   Updated: 2024/05/07 13:45:44 by isilva-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_printf(const char *s, ...)
 	va_start(ap, s);
 	cont = 0;
 	i = 0;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		if (s[i] == '%')
 			cont += pf_print_format(s[++i], &ap, 0);

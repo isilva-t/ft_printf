@@ -14,9 +14,6 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SOURCES = ft_printf.c \
-		  pf_print_str.c \
-		  pf_putchar.c \
-		  pf_print_format.c \
 		  pf_put_nbr_base.c \
 		  pf_print_ptr.c
 

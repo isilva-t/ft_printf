@@ -19,7 +19,7 @@ int	pf_print_str(char *str)
 	if (!str)
 		str = "(null)";
 	cont = 0;
-	while(str[cont])
+	while (str[cont])
 	{
 		pf_putchar(str[cont]);
 		cont++;
