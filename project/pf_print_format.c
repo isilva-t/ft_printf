@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_print_format.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: isilva-t <isilva-t@students.42porto.com>   +#+  +:+       +#+        */
+/*   By: isilva-t <isilva-t@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 08:47:09 by isilva-t          #+#    #+#             */
-/*   Updated: 2024/05/06 12:44:39 by isilva-t         ###   ########.fr       */
+/*   Updated: 2024/05/07 13:19:04 by isilva-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	pf_print_format(char spec, va_list *ap, int cont)
 	else if (spec == 'i')
 		cont += pf_print_nbr_base((long)va_arg(*ap, int), 10, 0);
 	else if (spec == 'u')
-		cont += write(1, "FALTA u", 7);
+		cont += pf_print_nbr_base((unsigned int)va_arg(*ap, unsigned int), 10, 0);
 	else if (spec == 'X')
 		cont += pf_print_nbr_base((long)va_arg(*ap, unsigned int), 16, -32);
 	else if (spec == 'x')

@@ -6,7 +6,7 @@
 /*   By: isilva-t <isilva-t@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:07:54 by isilva-t          #+#    #+#             */
-/*   Updated: 2024/05/06 12:43:39 by isilva-t         ###   ########.fr       */
+/*   Updated: 2024/05/07 11:18:07 by isilva-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ int	main(void)
 	cont = 0;
 	
 	cont = ft_printf("%c	", 'c');
-	ft_printf("my c:%i\n", cont);
+	ft_printf("my: %i\n", cont);
 	   cont = printf("%c	", 'c');
-	printf("OR:%i\n", cont);
+	printf("OR: %i\n", cont);
 	
 	cont = ft_printf(" p %p	", (void *)321321321321321);
 	ft_printf("MY: %i\n", cont);
@@ -69,9 +69,9 @@ int	main(void)
 	   cont = printf("    i %i	", -1);
 	printf("OR: %i\n", cont);
 
-	cont = ft_printf("     u %u	", 31);
+	cont = ft_printf("     u %u	", 0);
 	ft_printf("MY: %i\n", cont);
-	   cont = printf("     u %u	", 31);
+	   cont = printf("     u %u	", 0);
 	printf("OR: %i\n", cont);
 	
 	cont = ft_printf("      X %X	", 31);
