@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: isilva-t <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: isilva-t <isilva-t@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/15 09:36:50 by isilva-t          #+#    #+#              #
-#    Updated: 2024/05/03 09:50:46 by isilva-t         ###   ########.fr        #
+#    Created: 2024/05/08 09:55:09 by isilva-t          #+#    #+#              #
+#    Updated: 2024/05/08 09:56:21 by isilva-t         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,14 +32,14 @@ $(NAME):
 	${ARCHIVE} $(NAME) ${OBJECTS}
 	${MSG1}
 	
+#ma: 
+#	cc $(SOURCES) main.c
+#	@echo "\n______Test_Compiled_!\n"
+
 #bonus: $(NAME)
 #	${CC} -c ${CFLAGS} $(BONUS) 
 #	${ARCHIVE} $(NAME) ${BONUS_OBJECTS}
 #	${MSG2}
-
-ma: 
-	cc $(SOURCES)
-	@echo "\n______Test_Compiled_!\n"
 #bo:
 #	cc $(BONUS) $(SOURCES)
 #	@echo "\n______Bonus_Test_Compiled_!\n"
@@ -56,4 +56,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re so bo
+.PHONY: all bonus clean fclean re ma bo
