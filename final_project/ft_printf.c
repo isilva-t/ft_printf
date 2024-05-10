@@ -26,11 +26,11 @@ int	pf_print_format(char spec, va_list *ap, int cont)
 	else if (spec == 's')
 		cont += pf_print_str(va_arg(*ap, char *), 0);
 	else if (spec == 'u')
-		cont += pf_put_nbr_base((unsigned int)va_arg(*ap, unsigned int), 10, 0);
+		cont += pf_put_nbr_base(va_arg(*ap, unsigned int), 10, 0);
 	else if (spec == 'X')
-		cont += pf_put_nbr_base((long)va_arg(*ap, unsigned int), 16, -32);
+		cont += pf_put_nbr_base(va_arg(*ap, unsigned int), 16, -32);
 	else if (spec == 'x')
-		cont += pf_put_nbr_base((long)va_arg(*ap, unsigned int), 16, 0);
+		cont += pf_put_nbr_base(va_arg(*ap, unsigned int), 16, 0);
 	else if (spec == '%')
 		cont += pf_putchar('%');
 	else

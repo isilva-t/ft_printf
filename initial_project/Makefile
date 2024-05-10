@@ -30,8 +30,7 @@ MSG2 = @echo "________ Compiled Bonus files!"
 MSG3 = @echo "___________ Cleared!"
 MSG4 = @echo "_______________ Full Cleared!"
 
-$(NAME):
-	${CC} -c ${CFLAGS} $(SOURCES) 
+$(NAME): ${OBJECTS}
 	${ARCHIVE} $(NAME) ${OBJECTS}
 	${MSG1}
 	
