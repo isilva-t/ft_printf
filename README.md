@@ -2,6 +2,8 @@
 
 A custom implementation of the C standard library printf function.
 
+![Printer](https://raw.githubusercontent.com/isilva-t/42.ft_printf/main/img/printf.jpg)
+
 ## Description
 
 This project recodes the printf() function from libc to create a library called libftprintf.a. The implementation handles the following format specifiers:
